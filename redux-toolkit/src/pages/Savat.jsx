@@ -21,7 +21,7 @@ function Savat() {
             <div className="border-2 rounded-lg md:px-5 md:py-5">
               {arraylength == 0 && (
                 <h1 className="text-xl font-semibold">
-                  You didn't choose any products!
+                  You did not choose any products!
                 </h1>
               )}
               {toBasket.map((product) => {
@@ -111,10 +111,10 @@ function Savat() {
 
                         <div className="flex flex-col justify-center items-end absolute bottom-2 right-3">
                           <h1 className="md:text-2xl font-semibold text-sm ">
-                            {count * product.amount}$
+                            {(count * product.amount).toFixed(2)}$
                           </h1>
                           <p className="text-gray-500 line-through text-sm md:text-md">
-                            {product.price * product.amount} $
+                            {(product.price * product.amount).toFixed(2)} $
                           </p>
                         </div>
                       </div>
@@ -133,7 +133,7 @@ function Savat() {
               <div className="hidden md:flex flex-col gap-1">
                 <h1 className="flex justify-between  items-center ">
                   <span>Orders ({arraylength})</span>
-                  <span>{price} $</span>
+                  <span>{price.toFixed(2)} $</span>
                 </h1>
                 <div className="border border-violet-600 text-sm text-violet-600 w-full py-1 inline-flex justify-center items-center font-semibold rounded-sm">
                   Delivery on November 7th
@@ -152,7 +152,7 @@ function Savat() {
                   You are saving {parseFloat(price - allDiscount).toFixed(2)} $
                 </p>
               </div>
-              <button className="btn-block btn-sm md:btn py-2 rounded-lg bg-[#7000FF] text-white md:text-lg">
+              <button className="btn-block btn-sm md:btn py-2 rounded-lg bg-indigo-600 text-white md:text-lg">
                 Buy now
               </button>
             </div>
