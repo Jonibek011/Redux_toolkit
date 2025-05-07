@@ -5,7 +5,7 @@ function LikedImages() {
   const { likedImages } = useSelector((state) => state.Liked);
 
   return (
-    <div className="custom-container min-h-[68vh]">
+    <div className="custom-container min-h-[68vh] max-w-6xl mx-auto">
       {likedImages.length == 0 && (
         <h1 className="text-xl md:text-3xl text-violet-800 text-center font-semibold mt-10">
           You have not liked products yet :(

@@ -12,7 +12,7 @@ function Savat() {
   return (
     <>
       {toBasket && (
-        <div className="px-[5%]  min-h-[85vh] flex md:my-10 bg-slate-50 w-full">
+        <div className="px-[5%]  min-h-[85vh] flex md:my-10 bg-slate-50 w-full max-w-6xl mx-auto">
           <div className="w-[100%]  md:p-5 ">
             <h1 className="text-2xl font-semibold ">
               Your Basket,{" "}
