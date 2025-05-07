@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const getDataFromLocal = () => {
-  return localStorage.getItem("darkMode") || "cupcake";
+  return localStorage.getItem("darkMode") || "light";
 };
 
 function Navbar() {
@@ -21,7 +21,7 @@ function Navbar() {
   const [theme, setTheme] = useState(getDataFromLocal());
 
   const makeDarkMode = () => {
-    const newTheme = theme == "cupcake" ? "dark" : "cupcake";
+    const newTheme = theme == "light" ? "dracula" : "light";
     setTheme(newTheme);
   };
 
@@ -60,7 +60,7 @@ function Navbar() {
       </div>
       {/* ========================= Header ============================================================== */}
       <header className="max-w-6xl mx-auto">
-        <div className="navbar flex justify-between bg-base-100 h-[9vh] ">
+        <div className="navbar flex justify-between bg-white h-[9vh] ">
           <Link to="/">
             {" "}
             <div className="flex justify-between gap-2 ">
