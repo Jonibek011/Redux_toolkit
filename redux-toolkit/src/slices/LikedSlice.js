@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 //toast
-import { toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 
 const initialState = {
   likedImages: [],
@@ -33,7 +33,18 @@ const LikedSlice = createSlice({
     addToBasket: (state, { payload }) => {
       const product = state.toBasket.find((prod) => prod.id == payload.id);
       if (product) {
-        toast.warn("Product already added!");
+        toast.warn("Product already added!", {
+          position: "top-center",
+          autoClose: 1000,
+
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Slide,
+        });
       } else {
         state.toBasket = [...state.toBasket, payload];
         let allProductCounter = 0;

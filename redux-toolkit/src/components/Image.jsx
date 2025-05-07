@@ -10,6 +10,7 @@ import { addLike, addToBasket } from "../slices/LikedSlice";
 import { Link } from "react-router-dom";
 
 function Image({ product, added }) {
+  console.log(product);
   const dispatch = useDispatch();
   const { toggleButton } = useSelector((state) => state.Liked);
 
@@ -63,19 +64,30 @@ function Image({ product, added }) {
             On Sale!
           </span>
         </div>
-        <div className="card-info bg-slate-50 px-4 py-2 flex flex-col justify-between gap-10 h-full">
-          <div>
+        <div className="card-info bg-slate-50 px-4 py-2 flex flex-col justify-between gap-5 h-full">
+          <div className="flex flex-col gap-2">
             <h1 className="text-[18px] font-semibold text-black">
               {product.title}
             </h1>
             <p className="flex items-center gap-2">
-              <MdStar className="text-orange-300" /> {product.rating} (in stock{" "}
-              {product.stock})
+              <MdStar className="text-orange-300" />
+              <span className="bg-yellow-200 rounded-xl px-2 ">
+                {" "}
+                {product.rating}
+              </span>{" "}
+              <span className="text-red-500">(in stock {product.stock})</span>
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] md:text-[11px] lg:text-[12px] text-green-700">
+              {product.returnPolicy} | {product.warrantyInformation}
             </p>
           </div>
 
           <div>
-            <h1 className="text-gray-400 line-through">{product.price}$</h1>
+            <h1 className="text-gray-400 text-[14px] line-through">
+              {product.price}$
+            </h1>
             <h1 className="font-bold text-lg ">
               {parseFloat(
                 product.price -
